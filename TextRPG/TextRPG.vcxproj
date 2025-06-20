@@ -123,7 +123,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Character\Character.cpp" />
+    <ClCompile Include="Monster\Dragon.cpp" />
+    <ClCompile Include="Monster\Goblin.cpp" />
+    <ClCompile Include="Monster\Orc.cpp" />
+    <ClCompile Include="Monster\Slime.cpp" />
+    <ClCompile Include="Monster\Troll.cpp" />
     <ClCompile Include="TextRPG.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Character\Character.h" />
+    <ClInclude Include="Monster\Dragon.h" />
+    <ClInclude Include="Monster\Goblin.h" />
+    <ClInclude Include="Monster\Monster.h" />
+    <ClInclude Include="Monster\Orc.h" />
+    <ClInclude Include="Monster\Slime.h" />
+    <ClInclude Include="Monster\Troll.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
