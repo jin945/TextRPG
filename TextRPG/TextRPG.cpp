@@ -24,7 +24,7 @@ int main()
 		title();
 		int menuCode = menuDraw();
 		if (menuCode == 0) {
-			// ê²Œìž„ ì‹œìž‘
+			// °ÔÀÓ ½ÃÀÛ
 			gameStart();
 		}
 		else if (menuCode == 1) {
@@ -42,11 +42,11 @@ void gameStart() {
 	string name;
 	system("cls");
 	while (1) {
-		cout << "    ìš©ì‚¬ë‹˜ì˜ ì´ë¦„ì„ ìž…ë ¥í•´ì£¼ì„¸ìš” : " ;
+		cout << "    ¿ë»ç´ÔÀÇ ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä : " ;
 		cin >> name;
-		cout << "í™˜ì˜í•©ë‹ˆë‹¤ " << name << "ë‹˜!";
+		cout << "È¯¿µÇÕ´Ï´Ù " << name << "´Ô!";
 		
-		// ë°‘ì— ì½”ë“œ ìž‘ì„±
+		// ¹Ø¿¡ ÄÚµå ÀÛ¼º
 	}
 	
 }
@@ -75,12 +75,12 @@ void init () {
 void infoDraw() {
 	system("cls");
 	printf("\n\n");
-	printf("               Team : 4ì¡°       \n\n");
-	printf("         ê¹€ì—°ì§€  ê¹€íƒœì—°  ë‚¨ìŠ¹ìœ¤ \n");
-	printf("            ë°•ì§„ê¶Œ    ì´ì„ í˜•    \n");
+	printf("               Team : 4Á¶       \n\n");
+	printf("         ±è¿¬Áö  ±èÅÂ¿¬  ³²½ÂÀ± \n");
+	printf("            ¹ÚÁø±Ç     ÀÌ¼±Çü   \n");
 	printf("\n\n");
-	printf("       ë‚´ì¼ë°°ì›€ìº í”„ TextRPG ê³¼ì œ \n");
-	printf("ìŠ¤íŽ˜ì´ìŠ¤ ë°”ë¥¼ ëˆ„ë¥´ë©´ ë©”ì¸í™”ë©´ìœ¼ë¡œ ì´ë™í•©ë‹ˆë‹¤.");
+	printf("       ³»ÀÏ¹è¿òÄ·ÇÁ TextRPG °úÁ¦ \n");
+	printf("½ºÆäÀÌ½º ¹Ù¸¦ ´©¸£¸é ¸ÞÀÎÈ­¸éÀ¸·Î ÀÌµ¿ÇÕ´Ï´Ù.");
 
 	while (1) {
 		if (keyControl() == SUBMIT) {
@@ -123,7 +123,7 @@ int menuDraw(){
 		int n = keyControl();
 		switch(n){
 			case UP: {
-				if (y>15) { // yëŠ” 15~17ê¹Œì§€ë§Œ ì´ë™ 
+				if (y>15) { // y´Â 15~17±îÁö¸¸ ÀÌµ¿ 
 					gotoxy(x-2,y);
 					printf(" ");
 					gotoxy(x-2, --y);
