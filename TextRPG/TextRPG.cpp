@@ -1,7 +1,7 @@
 #include <iostream>
 #include <Windows.h>
 #include <conio.h>
-#include "Character.h"
+#include "Character/Character.h"
 
 #define UP 0
 #define DOWN 1
