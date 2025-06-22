@@ -1,5 +1,6 @@
-#pragma once
+ï»¿#pragma once
 #include <string>
+//ëª¬ìŠ¤í„° ì¸í„°í˜ì´ìŠ¤	ì •ì˜
 class Monster
 {
 public:
@@ -7,9 +8,7 @@ public:
 	virtual void takeDamage(int damage) = 0;
 	virtual int getHealth() const = 0;
 	virtual int getAttack() const = 0;
-	//virtual item* dropItem() const = 0; ÃßÈÄ ±¸Çö
+	//virtual Item* dropItem() const = 0;
 
-	virtual ~Monster()
-	{
-	}
+	virtual ~Monster() = default;
 };
