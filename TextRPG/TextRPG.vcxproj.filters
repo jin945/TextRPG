@@ -12,44 +12,28 @@
     <ClCompile Include="Character\Character.cpp">
       <Filter>Character</Filter>
     </ClCompile>
-    <ClCompile Include="Monster\Dragon.cpp">
-      <Filter>Monster</Filter>
-    </ClCompile>
-    <ClCompile Include="Monster\Goblin.cpp">
-      <Filter>Monster</Filter>
-    </ClCompile>
-    <ClCompile Include="Monster\Orc.cpp">
-      <Filter>Monster</Filter>
-    </ClCompile>
-    <ClCompile Include="Monster\Slime.cpp">
-      <Filter>Monster</Filter>
-    </ClCompile>
-    <ClCompile Include="Monster\Troll.cpp">
-      <Filter>Monster</Filter>
-    </ClCompile>
     <ClCompile Include="TextRPG.cpp" />
+
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character\Character.h">
       <Filter>Character</Filter>
     </ClInclude>
-    <ClInclude Include="Monster\Troll.h">
-      <Filter>Monster</Filter>
-    </ClInclude>
-    <ClInclude Include="Monster\Dragon.h">
-      <Filter>Monster</Filter>
-    </ClInclude>
-    <ClInclude Include="Monster\Goblin.h">
-      <Filter>Monster</Filter>
-    </ClInclude>
     <ClInclude Include="Monster\Monster.h">
       <Filter>Monster</Filter>
     </ClInclude>
-    <ClInclude Include="Monster\Orc.h">
+    <ClInclude Include="Monster\MonsterDecorator.h">
       <Filter>Monster</Filter>
     </ClInclude>
-    <ClInclude Include="Monster\Slime.h">
+    <ClInclude Include="Monster\BossDecorator.h">
       <Filter>Monster</Filter>
     </ClInclude>
+    <ClInclude Include="Monster\BaseMonster.h">
+      <Filter>Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster\MonsterList.h">
+      <Filter>Monster</Filter>
+    </ClInclude>
+
   </ItemGroup>
 </Project>
