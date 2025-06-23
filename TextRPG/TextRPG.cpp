@@ -1,8 +1,11 @@
 ﻿#include <iostream>
 #include <Windows.h>
 #include <conio.h>
-
-
+#include"Character.h"
+#include"Monster.h"
+#include"GameManager.h"
+#include"GenerateMonster.h"
+#include <memory> 
 #define UP 0
 #define DOWN 1
 #define SUBMIT 2
@@ -38,19 +41,28 @@ int main()
 	return 0;
 }
 
-void gameStart() {
+void gameStart()
+{
 	string name;
 	system("cls");
-	while (1) {
-		cout << "    용사님의 이름을 입력해주세요 : " ;
-		cin >> name;
-		cout << "환영합니다 " << name << "님!";
-		
-		// 밑에 코드 작성
+	cout<<"용사님의 이름을 입력해주세요 : ";
+	cin>>name;
+	cout<<"환영합니다 "<<name<<"님!"<<endl;
+	Character* player = Character::getInstance(name);
+
+	GameManager gameManager;
+	while (1)
+	{
+		player->displayStatus();
+		unique_ptr<Monster> monster = createRandomMonster(player->getLevel());
+		gameManager.battle(player, move(monster));
+
+		//cin>>name;
+
 	}
-	
 }
-void title() {
+void title()
+{
 	printf("\n");
 	printf("\n");
 	printf("=======================================================================================================================\n");
@@ -119,11 +131,15 @@ int menuDraw(){
 	gotoxy(x, y+2);
 	printf("  QUIT");
 	
-	while (1) {
+	while (1) 
+	{
 		int n = keyControl();
-		switch(n){
-			case UP: {
-				if (y>15) { // y는 15~17까지만 이동 
+		switch(n)
+		{
+			case UP: 
+			{
+				if (y>15) 
+				{ // y는 15~17까지만 이동 
 					gotoxy(x-2,y);
 					printf(" ");
 					gotoxy(x-2, --y);
@@ -131,8 +147,10 @@ int menuDraw(){
 				} 
 				break;
 			}
-			case DOWN: {
-				if(y<17){
+			case DOWN: 
+			{
+				if(y<17)
+				{
 					gotoxy(x-2,y);
 					printf(" ");
 					gotoxy(x-2,++y);
@@ -141,7 +159,8 @@ int menuDraw(){
 				break;
 			}
 			
-			case SUBMIT: {
+			case SUBMIT: 
+			{
 				return y-15;
 			}
 		}

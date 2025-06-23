@@ -22,33 +22,70 @@ Character* Character::getInstance(std::string name)
 	return instance;
 }
 
-void Character::displayStatus()
+void Character::displayStatus() const
 {
-	std::cout << "------------------\n"
+	std::cout << "-----------------------\n"
 		<< "Character's Name: " << name << '\n'
 		<< "Level: " << level << '\n'
 		<< "HP: " << health << " / " << maxHealth << '\n'
 		<< "Attack: " << attack << '\n'
 		<< "EXP: " << experience << '\n'
 		<< "Gold: " << gold << '\n'
-		<< "------------------\n";
+		<< "-----------------------\n";
 }
 
 void Character::levelUp()
 {
-	// 전투시스템에서 경험치가 100이상이면 levelUP() 하므로 아래 if문 체크안함
-	//if (experience >= 100)
-
-	// 누적 경험치가 200 이상임을 고려함
-	while (experience >= 100)
+	while (experience>=100)
 	{
+		if (level==10)
+		{
+			std::cout<<"Maximum level reached! (Level 10)!\n";
+			experience = 0;
+			break;
+		}
+
 		experience -= 100;
 		++level;
+
+		maxHealth += (level * 20);
+		health = maxHealth;
+		attack += (level * 5);
+
+		std::cout<<"Level Up! Current Level / Experience: "
+			<<level<<"Lv / "<<experience<<'\n';
 	}
+}
 
-	std::cout << "Level Up! Current Level / Experience: "
-		<< level << " / " << experience << '\n';
 
+void Character::takeDamage(int damage)
+{
+	health = std::max(0, health-damage);
+}
+
+int Character::getAttack() const
+{
+	return attack;
+}
+
+int Character::getHealth() const
+{
+	return health;
+}
+
+int Character::getMaxHealth() const
+{
+	return maxHealth;
+}
+
+int Character::getLevel() const
+{
+	return level;
+}
+
+std::string Character::getName() const
+{
+	return name;
 }
 
 void Character::useItem(int index)
@@ -74,7 +111,49 @@ void Character::useItem(int index)
 	}
 }
 
+void Character::addExperience(int exp) 
+{
+	experience += exp; 
+	levelUp();
+}
+void Character :: addGold(int gol) 
+{ 
+	gold += gol;
+}
+
 void Character::visitShop()
 {
-	// 도전기능: interaction with Shop
+	int choice = 0;
+	std::cout<<"상점을 이용하시겠습니까?\n";
+	std::cout<<"1. 예\n2. 아니오\n";
+
+	while (true)
+	{
+		std::cin>>choice;
+
+		if (std::cin.fail())
+		{
+			std::cin.clear();
+			std::cin.ignore();
+			std::cout<<"잘못된 입력입니다. 숫자로 입력해주세요.\n> ";
+			continue;
+		}
+
+		if (choice==1)
+		{
+			std::cout<<"상점에 오신 것을 환영합니다!\n";
+			break; // 상점 입장
+		}
+		else if (choice==2)
+		{
+			std::cout<<"상점을 이용하지 않습니다.\n";
+			return; // 함수 종료
+		}
+		else
+		{
+			std::cout<<"잘못된 선택입니다. 다시 선택해주세요.\n> ";
+		}
+	}
+	//상점 구현
+	std::cout<<"상점 기능은 아직 구현되지 않았습니다.\n";
 }

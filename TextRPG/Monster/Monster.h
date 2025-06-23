@@ -8,6 +8,8 @@ public:
 	virtual void takeDamage(int damage) = 0;
 	virtual int getHealth() const = 0;
 	virtual int getAttack() const = 0;
+	virtual int getExpReward() const = 0;
+	virtual int getGoldReward() const = 0;
 	//virtual Item* dropItem() const = 0;
 
 	virtual ~Monster() = default;

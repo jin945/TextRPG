@@ -1,27 +1,22 @@
 #pragma once
 #include "MonsterDecorator.h"
 #include <string>
-#include <cmath> 
-//보스 몬스터의 이름 뒤에 "King" 추가, 스텟 1.5배 증가
+#include <cmath>
+
 class BossDecorator : public MonsterDecorator
 {
+private:
+	int bossHealth;
+	int bossAttack;
+
 public:
-	BossDecorator(std::unique_ptr<Monster> m)
-		: MonsterDecorator(std::move(m))
-	{}
+	BossDecorator(std::unique_ptr<Monster> m);
 
-	std::string getName() const override
-	{
-		return monster->getName() + " King";
-	}
+	std::string getName() const override;
+	int getHealth() const override;
+	int getAttack() const override;
+	void takeDamage(int damage) override;
 
-	int getHealth() const override
-	{
-		return static_cast<int>(std::round(monster->getHealth() * 1.5));
-	}
-
-	int getAttack() const override
-	{
-		return static_cast<int>(std::round(monster->getAttack() * 1.5));
-	}
+	int getExpReward() const override;
+	int getGoldReward() const override;
 };

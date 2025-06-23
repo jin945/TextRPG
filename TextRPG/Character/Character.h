@@ -12,8 +12,8 @@ private:
 
 	std::string name;
 	int level;
-	int health;
 	int maxHealth;
+	int health;
 	int attack;
 	int experience;
 	int gold;
@@ -25,8 +25,19 @@ public:
 
 	static Character* getInstance(std::string name = "");
 
-	void displayStatus();
+	void displayStatus()const;
 	void levelUp();
 	void useItem(int index);
 	void visitShop();
-};
+
+	int getHealth() const;
+	int getMaxHealth() const;
+	int getAttack() const;
+	int getLevel() const;
+	std::string getName() const;
+
+	void takeDamage(int damage);
+
+	void addExperience(int exp);
+	void addGold(int gol);
+}; 

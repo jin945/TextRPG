@@ -7,18 +7,35 @@
     <Filter Include="Character">
       <UniqueIdentifier>{4dd1f573-f933-4d62-ae85-7361f7a9d659}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameManager">
+      <UniqueIdentifier>{141c3c3d-c206-4251-866a-ba5ecc1b707a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="TextRPG.cpp" />
+    <ClCompile Include="GameManager\GameManager.cpp">
+      <Filter>GameManager</Filter>
+    </ClCompile>
     <ClCompile Include="Character\Character.cpp">
       <Filter>Character</Filter>
     </ClCompile>
-    <ClCompile Include="TextRPG.cpp" />
-
+    <ClCompile Include="Monster\BaseMonster.cpp">
+      <Filter>Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster\BossDecorator.cpp">
+      <Filter>Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster\GenerateMonster.cpp">
+      <Filter>Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster\MonsterDecorator.cpp">
+      <Filter>Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster\MonsterList.cpp">
+      <Filter>Monster</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Character\Character.h">
-      <Filter>Character</Filter>
-    </ClInclude>
     <ClInclude Include="Monster\Monster.h">
       <Filter>Monster</Filter>
     </ClInclude>
@@ -34,6 +51,14 @@
     <ClInclude Include="Monster\MonsterList.h">
       <Filter>Monster</Filter>
     </ClInclude>
-
+    <ClInclude Include="Monster\GenerateMonster.h">
+      <Filter>Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager\GameManager.h">
+      <Filter>GameManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Character\Character.h">
+      <Filter>Character</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
