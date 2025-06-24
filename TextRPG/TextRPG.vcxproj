@@ -125,6 +125,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Character\Character.cpp" />
+    <ClCompile Include="Character\Item.cpp" />
     <ClCompile Include="GameManager\GameManager.cpp" />
     <ClCompile Include="Monster\BaseMonster.cpp" />
     <ClCompile Include="Monster\BossDecorator.cpp" />
@@ -135,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character\Character.h" />
+    <ClInclude Include="Character\Item.h" />
     <ClInclude Include="GameManager\GameManager.h" />
     <ClInclude Include="Monster\GenerateMonster.h" />
     <ClInclude Include="Monster\Monster.h" />

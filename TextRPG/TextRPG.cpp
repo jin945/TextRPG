@@ -45,8 +45,20 @@ void gameStart()
 {
 	string name;
 	system("cls");
-	cout<<"용사님의 이름을 입력해주세요 : ";
-	cin>>name;
+	while (true) {
+		std::cout<<"용사님의 이름을 입력해주세요: ";
+		std::getline(std::cin, name);
+
+		if (name.empty()) {
+			std::cout<<"이름이 비어있습니다. 다시 입력해주세요.\n";
+		}
+		else if (name.find(' ')!=std::string::npos) {
+			std::cout<<"이름에 공백이 포함되어 있습니다. 다시 입력해주세요.\n";
+		}
+		else {
+			break;
+		}
+	}
 	cout<<"환영합니다 "<<name<<"님!"<<endl;
 	Character* player = Character::getInstance(name);
 
@@ -57,7 +69,7 @@ void gameStart()
 		unique_ptr<Monster> monster = createRandomMonster(player->getLevel());
 		gameManager.battle(player, move(monster));
 
-		//cin>>name;
+		
 
 	}
 }

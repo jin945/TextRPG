@@ -28,7 +28,9 @@ public:
 	void displayStatus()const;
 	void levelUp();
 	void useItem(int index);
+	void shopMenu();
 	void visitShop();
+	
 
 	int getHealth() const;
 	int getMaxHealth() const;
@@ -40,4 +42,11 @@ public:
 
 	void addExperience(int exp);
 	void addGold(int gol);
+
+	void increaseHealth(int amount);
+	void increaseAttack(int amount);
+	void addItem(Item* item);
+
+	int getInventorySize() const;
+	std::string getItemName(int index) const;
 }; 

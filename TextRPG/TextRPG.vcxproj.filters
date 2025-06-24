@@ -34,6 +34,9 @@
     <ClCompile Include="Monster\MonsterList.cpp">
       <Filter>Monster</Filter>
     </ClCompile>
+    <ClCompile Include="Character\Item.cpp">
+      <Filter>Character</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Monster\Monster.h">
@@ -58,6 +61,9 @@
       <Filter>GameManager</Filter>
     </ClInclude>
     <ClInclude Include="Character\Character.h">
+      <Filter>Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Character\Item.h">
       <Filter>Character</Filter>
     </ClInclude>
   </ItemGroup>
